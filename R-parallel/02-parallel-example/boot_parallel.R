@@ -8,7 +8,7 @@ library(parallel) # manages cluster
 library(doParallel) # creates parallel backend
 library(foreach) # provides parallel for loops
 
-ncpu <- 20 # number of (logical) CPUs to use
+ncpu <- parallel::detectCores() - 1 # number of (logical) CPUs to use
 nboot <- 10000 # number of bootstrap replicates
 set.seed(1000) # set random seed
 
